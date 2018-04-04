@@ -1,0 +1,6 @@
+/.vs/DemoQA/v14/*.suo
+/DemoQA.Core/obj/Debug
+/DemoQA.Tests/bin/Debug/*.tmp
+/DemoQA.Tests/obj/Debug
+/*.suo
+/packages

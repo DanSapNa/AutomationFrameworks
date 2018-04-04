@@ -1,0 +1,10 @@
+<Configuration>
+	<Environment>
+		<url>http://demoqa.com</url>
+		<browser>FF</browser>
+		<mode>Normal</mode>
+		<report>true</report>
+		<username>AUTConfig</username>
+		<password>Password1</password>
+	</Environment>
+</Configuration>
