@@ -1,7 +1,7 @@
 <Configuration>
 	<Environment>
 		<url>http://demoqa.com</url>
-		<browser>FF</browser>
+		<browser>CH</browser>
 		<mode>Normal</mode>
 		<report>true</report>
 		<username>AUTConfig</username>
