@@ -1,6 +1,5 @@
 ﻿using DemoQA.Core.Helpers.XMLConfigFile;
 using DemoQA.Core.PageMapping.PageObjects;
-using Microsoft.Win32;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -16,14 +15,16 @@ namespace DemoQA.Tests
 {
     public class TestFunctional
     {
-        private string pathToBinDebugFolder = Directory.GetParent(Assembly.GetExecutingAssembly().Location).ToString();
+        private static string pathToBinDebugFolder = Directory.GetParent(Assembly.GetExecutingAssembly().Location).ToString();
+        //private static string pathToReportsFolder = Path.Combine(Directory.GetParent(pathToBinDebugFolder).Parent.FullName, "Reports");
         private const string CONFIG_FILE_NAME = "Configuration.xml";
         private const string PATH_TO_FIREFOX = @"C:\Program Files (x86)\Mozilla Firefox\firefox.exe";
         private const string CHROME_MODE = "headless";
+
         private Configuration configFile;
         private IWebDriver driver;
+        private Deserialization deserialize = new Deserialization();
         public BasePage page;
-        Deserialization deserialize = new Deserialization();
 
         [OneTimeSetUp]
         public void OneTimeSetUp()
@@ -75,14 +76,14 @@ namespace DemoQA.Tests
         [TearDown]
         public void TearDown()
         {
-
+            driver.Close();
+            driver.Quit();
         }
 
         [OneTimeTearDown]
         public void OneTimeTearDown()
         {
-            driver.Close();
-            driver.Quit();
+
         }
 
         public void KillDriverProcess()

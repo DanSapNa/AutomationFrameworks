@@ -14,7 +14,6 @@ namespace DemoQA.Tests.Tests
         [Test]
         public void Test2()
         {
-
         }
     }
 }
